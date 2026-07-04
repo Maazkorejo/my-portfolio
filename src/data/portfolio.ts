@@ -141,11 +141,11 @@ export const repos = [
     language: "JavaScript",
   },
   {
-    name: "My-Portfolio",
-    description: "Earlier static portfolio website (HTML/CSS/JS).",
-    url: "https://github.com/Maazkorejo/My-Portfolio",
-    homepage: "https://my-portfolio-gray-tau-42.vercel.app",
-    language: "HTML",
+    name: "my-portfolio",
+    description: "This portfolio site — React, Tailwind, and Framer Motion, deployed on Vercel.",
+    url: "https://github.com/Maazkorejo/my-portfolio",
+    homepage: "https://my-portfolio-iota-six-98.vercel.app",
+    language: "TypeScript",
   },
   {
     name: "Maazkorejo",
