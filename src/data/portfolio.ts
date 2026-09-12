@@ -227,6 +227,12 @@ import googleAiFundamentals from "@/assets/certs_real/google-ai-fundamentals.png
 import googleAiResearchInsights from "@/assets/certs_real/google-ai-research-insights.png";
 import linuxFoundationLfc102 from "@/assets/certs_real/linux-foundation-lfc102.png";
 
+import flyrankBackendAi from "@/assets/certs_real/flyrank-backend-ai-engineering.png";
+import flyrankRecomP1 from "@/assets/certs_real/flyrank-recommendation-page-1.png";
+import flyrankRecomP2 from "@/assets/certs_real/flyrank-recommendation-page-2.png";
+import flyrankEvalP1 from "@/assets/certs_real/flyrank-evaluation-report-page-1.png";
+import flyrankEvalP2 from "@/assets/certs_real/flyrank-evaluation-report-page-2.png";
+
 import forageDatacom from "@/assets/certs_real/forage-datacom-cybersec.jpg";
 import forageMastercard from "@/assets/certs_real/forage-mastercard-cybersec.jpg";
 import ibmJobLandscape from "@/assets/certs_real/ibm-cybersec-job-landscape.jpg";
@@ -266,6 +272,9 @@ export const certificateImages = [
   { title: "AI for Research and Insights", issuer: "Google · Coursera", src: googleAiResearchInsights, image: googleAiResearchInsights },
   { title: "Inclusive Open Source Community Orientation (LFC102)", issuer: "The Linux Foundation", src: linuxFoundationLfc102, image: linuxFoundationLfc102 },
 
+  // Industry Engineering & Program Honors
+  { title: "Backend AI Engineering Internship", issuer: "FlyRank.ai", src: flyrankBackendAi, image: flyrankBackendAi },
+
   // Cybersecurity & Professional Simulations
   { title: "Cyber Security Operations Job Simulation", issuer: "Datacom · Forage", src: forageDatacom, image: forageDatacom },
   { title: "Cybersecurity Job Simulation", issuer: "Mastercard · Forage", src: forageMastercard, image: forageMastercard },
@@ -298,6 +307,32 @@ export const experience = [
       "Delivered accepted culminating capstone solution ('Your 10x Solution') reviewed and approved by lead track mentors and executive leadership.",
       "Built and deployed end-to-end backend services spanning 5 core technical assignments: custom web scrapers, JWT/auth protection layers, multi-container Docker stacks, PostgreSQL database integrations, and CRUD APIs.",
       "Attended 29 technical masterclasses and completed 55 industry learning resources alongside completing 12 verified Anthropic Academy certifications.",
+    ],
+    documents: [
+      {
+        title: "Certificate of Completion — Backend AI Engineering",
+        badge: "Certificate",
+        issuer: "FlyRank.ai · ID: FR-D11-FA8DB-52256",
+        images: [flyrankBackendAi],
+        pdfUrl: "/downloads/flyrank-certificate.pdf",
+        verifyUrl: "https://internship.flyrank.ai/verify?id=FR-D11-FA8DB-52256",
+      },
+      {
+        title: "Official Recommendation Letter",
+        badge: "Letter of Recommendation",
+        issuer: "Alen Malkoc, CEO · FlyRank.ai",
+        images: [flyrankRecomP1, flyrankRecomP2],
+        pdfUrl: "/downloads/flyrank-recommendation-letter.pdf",
+        verifyUrl: "https://internship.flyrank.ai/verify?id=FR-D10-4A2D2-7F7FF",
+      },
+      {
+        title: "Final Internship Report & Evaluation",
+        badge: "Evaluation Report",
+        issuer: "Arijana Ibrović, Director · FlyRank.ai",
+        images: [flyrankEvalP1, flyrankEvalP2],
+        pdfUrl: "/downloads/flyrank-evaluation-report.pdf",
+        verifyUrl: "https://internship.flyrank.ai/verify?id=FR-D8-2C53C-C9AA4",
+      },
     ],
   },
   {
@@ -338,6 +373,14 @@ export const experience = [
     period: "Jan – Mar 2025",
     points: [
       "Produced 10+ branded visual assets for institutional print and digital communications under a government-accredited design program.",
+    ],
+    documents: [
+      {
+        title: "Certificate of Completion — Certified Graphic Designer",
+        badge: "Certificate",
+        issuer: "PITP–MUET · Govt of Sindh",
+        images: [pitpDesigner],
+      },
     ],
   },
 ];
@@ -391,6 +434,7 @@ export const certifications = [
     group: "Programs, Awards & Fellowships",
     issuer: "Research & Industry Honors",
     items: [
+      { name: "Backend AI Engineering Internship — Certificate of Completion", issuer: "FlyRank.ai", date: "Sep 2026" },
       { name: "INFERENCE Lab Fellowship — Cohort 01 Fellow", issuer: "INFERENCE Lab", date: "Jul 2026" },
       { name: "Top Participant — HEC/NAVTTC ACT AI SkillBridge", issuer: "HEC / NAVTTC", date: "2026" },
       { name: "McKinsey Forward Program", issuer: "McKinsey.org", date: "Jun 2026" },
