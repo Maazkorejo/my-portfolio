@@ -92,7 +92,7 @@ export function Hero() {
           >
             Specializing in LLM-integrated platforms, Intelligent Document Processing (IDP) SaaS,
             reproducible offline evaluation architectures, and agentic workflows.
-            Research Fellow at INFERENCE Lab (<span className="text-foreground font-mono text-xs">llm-eval-kit</span>) and AI Developer Intern at Nebulark.
+            Former Backend AI Intern at FlyRank.ai, Research Fellow at INFERENCE Lab (<span className="text-foreground font-mono text-xs">llm-eval-kit</span>), and AI Developer Intern at Nebulark.
           </motion.p>
 
           {/* Action CTAs */}

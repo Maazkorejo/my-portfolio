@@ -6,7 +6,7 @@ export const personal = {
   phone: "+92 345 661 8618",
   linkedin: "https://linkedin.com/in/muhammad-maaz-korejo",
   github: "https://github.com/Maazkorejo",
-  bio: "AI Developer & Backend Engineer specializing in LLM-integrated systems, Intelligent Document Processing (IDP), and offline evaluation architectures. Research Engineer Fellow at INFERENCE Lab (llm-eval-kit), AI Developer Intern at Nebulark, and creator of open-source tooling (CTX-Bridge on PyPI). 3rd-year IT student at University of Sindh holding 12 Anthropic-verified credentials and Google AI Essentials specialization.",
+  bio: "AI Developer & Backend Engineer specializing in LLM-integrated systems, Intelligent Document Processing (IDP), and offline evaluation architectures. Former Backend AI Engineering Intern at FlyRank.ai, Research Fellow at INFERENCE Lab (llm-eval-kit), AI Developer Intern at Nebulark, and creator of open-source tooling (CTX-Bridge on PyPI). 3rd-year IT student at University of Sindh holding 12 Anthropic-verified credentials and Google AI Essentials specialization.",
 };
 
 export const skillGroups = [
@@ -289,9 +289,22 @@ export const certificateImages = [
 
 export const experience = [
   {
+    role: "Back-End AI Engineering Intern",
+    org: "FlyRank.ai (Casper, WY · Remote)",
+    period: "Jul – Sep 2026",
+    badge: "Completed Track",
+    points: [
+      "Completed 292+ documented hours across API contracts, Task design and prompting, Retrieval and grounding (RAG), and Evaluation and operations.",
+      "Delivered accepted culminating capstone solution ('Your 10x Solution') reviewed and approved by lead track mentors and executive leadership.",
+      "Built and deployed end-to-end backend services spanning 5 core technical assignments: custom web scrapers, JWT/auth protection layers, multi-container Docker stacks, PostgreSQL database integrations, and CRUD APIs.",
+      "Attended 29 technical masterclasses and completed 55 industry learning resources alongside completing 12 verified Anthropic Academy certifications.",
+    ],
+  },
+  {
     role: "AI Developer Intern",
     org: "Nebulark (IDP SaaS)",
     period: "Jul 2026 – Present",
+    badge: "Current Role",
     points: [
       "Conducted a comprehensive 14-tool benchmark across OCR, layout parsing, and table extraction engines (Docling, Mistral-OCR-4, Chandra-OCR, DocLayout-YOLO, Reducto, LandingAI DPT-3, PaddleOCR, LiteParse).",
       "Architected a 3-tier cost-optimized hybrid extraction pipeline (0.5s LiteParse heuristic pre-check -> local Docling on CPU -> Mistral-OCR-4 / Chandra-OCR cloud fallback), slashing cloud API costs by 80–90%.",
@@ -303,6 +316,7 @@ export const experience = [
     role: "Research / Implementation Engineer",
     org: "INFERENCE Lab Fellowship",
     period: "Jul 2026 – Present",
+    badge: "Cohort 01",
     points: [
       "Selected from 130+ applicants for Cohort 01 building llm-eval-kit, an open-source, pip-installable Python library for offline, deterministic LLM evaluation.",
       "Designed and implemented 4 core evaluation modules (Factual Grounding, Relevance, Refusal Detection, Completeness) with zero external LLM-as-judge API calls using local sentence-transformers (all-MiniLM-L6-v2).",

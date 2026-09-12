@@ -16,8 +16,8 @@ export default function ExperiencePage() {
             Where I've Been &amp; What I've Built.
           </h1>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed text-pretty">
-            Professional track record spanning Intelligent Document Processing (IDP) SaaS,
-            open-source LLM evaluation engineering fellowships, and cloud backend platforms.
+            Professional track record spanning Backend AI Engineering, Intelligent Document Processing (IDP) SaaS,
+            open-source LLM evaluation engineering fellowships, and cloud backends.
           </p>
         </div>
       </div>

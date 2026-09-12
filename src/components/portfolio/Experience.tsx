@@ -10,7 +10,7 @@ export function Experience() {
       id="experience"
       eyebrow="04 / Career & Fellowships"
       title="Where I've been & what I've built."
-      description="Track record across Intelligent Document Processing (IDP) SaaS, open-source LLM evaluation engineering, and cloud backend platforms."
+      description="Track record across Backend AI Engineering, Intelligent Document Processing (IDP) SaaS, open-source LLM evaluation engineering, and cloud backends."
     >
       <motion.div
         variants={staggerContainer(0.1)}
@@ -35,14 +35,18 @@ export function Experience() {
                     <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground">
                       {e.role}
                     </h3>
-                    {i === 0 && (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-accent/10 text-accent border border-accent/20">
-                        <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" /> Current Role
-                      </span>
-                    )}
-                    {i === 1 && (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-secondary text-muted-foreground border border-border">
-                        Cohort 01
+                    {e.badge && (
+                      <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono ${
+                        e.badge === "Current Role"
+                          ? "bg-accent/10 text-accent border border-accent/20"
+                          : e.badge === "Completed Track"
+                          ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                          : "bg-secondary text-muted-foreground border border-border"
+                      }`}>
+                        {e.badge === "Current Role" && (
+                          <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+                        )}
+                        {e.badge}
                       </span>
                     )}
                   </div>
