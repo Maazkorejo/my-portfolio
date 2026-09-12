@@ -46,9 +46,19 @@ export function Experience() {
           >
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent flex-shrink-0 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                  <Briefcase className="h-5 w-5" />
-                </div>
+                {"logo" in e && e.logo ? (
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-background border border-border/80 p-2 flex-shrink-0 group-hover:border-foreground/40 transition-colors overflow-hidden">
+                    <img
+                      src={e.logo}
+                      alt={`${e.org} logo`}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent flex-shrink-0 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                    <Briefcase className="h-5 w-5" />
+                  </div>
+                )}
                 <div>
                   <div className="flex items-center gap-2.5 flex-wrap">
                     <h3 className="font-display text-xl sm:text-2xl font-bold text-foreground">

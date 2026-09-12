@@ -233,6 +233,10 @@ import flyrankRecomP2 from "@/assets/certs_real/flyrank-recommendation-page-2.pn
 import flyrankEvalP1 from "@/assets/certs_real/flyrank-evaluation-report-page-1.png";
 import flyrankEvalP2 from "@/assets/certs_real/flyrank-evaluation-report-page-2.png";
 
+import flyrankLogo from "@/assets/flyrank-logo.svg";
+import inferenceLabLogo from "@/assets/inference-lab-logo.png";
+import pitpLogo from "@/assets/pitp-logo.webp";
+
 import forageDatacom from "@/assets/certs_real/forage-datacom-cybersec.jpg";
 import forageMastercard from "@/assets/certs_real/forage-mastercard-cybersec.jpg";
 import ibmJobLandscape from "@/assets/certs_real/ibm-cybersec-job-landscape.jpg";
@@ -300,6 +304,7 @@ export const experience = [
   {
     role: "Back-End AI Engineering Intern",
     org: "FlyRank.ai (Casper, WY · Remote)",
+    logo: flyrankLogo,
     period: "Jul – Sep 2026",
     badge: "Completed Track",
     points: [
@@ -350,6 +355,7 @@ export const experience = [
   {
     role: "Research / Implementation Engineer",
     org: "INFERENCE Lab Fellowship",
+    logo: inferenceLabLogo,
     period: "Jul 2026 – Present",
     badge: "Cohort 01",
     points: [
@@ -361,6 +367,7 @@ export const experience = [
   {
     role: "Cloud Computing Intern",
     org: "PITP–MUET, Jamshoro (Govt of Sindh)",
+    logo: pitpLogo,
     period: "Mar – May 2026",
     points: [
       "Delivered a capstone Flask + PostgreSQL + Railway platform with automated CI/CD as part of a government-backed technical training program.",
@@ -370,6 +377,7 @@ export const experience = [
   {
     role: "Certified Graphic Designer Intern",
     org: "PITP–MUET (Govt of Sindh)",
+    logo: pitpLogo,
     period: "Jan – Mar 2025",
     points: [
       "Produced 10+ branded visual assets for institutional print and digital communications under a government-accredited design program.",
