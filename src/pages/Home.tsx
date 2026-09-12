@@ -64,7 +64,7 @@ const coreInitiatives = [
   },
   {
     category: "Accredited Authority",
-    statusTag: "32 Scanned Originals",
+    statusTag: "33 Scanned Originals",
     title: "Verified Certifications",
     desc: "12 Anthropic credentials, Google AI Essentials 5-course specialization, Linux Foundation, IBM, and UniAthena Python certifications.",
     href: "/certifications",
@@ -73,7 +73,7 @@ const coreInitiatives = [
       "Anthropic Model Context Protocol (MCP)",
       "Google AI Essentials Specialization",
       "Linux Foundation Open Source (LFC102)",
-      "Full modal preview & .zip download",
+      "Full interactive modal inspection",
     ],
   },
 ];

@@ -8,7 +8,6 @@ import {
   Calendar,
   FileCheck,
   Eye,
-  Download,
   ExternalLink,
   ShieldCheck,
   Award,
@@ -180,19 +179,6 @@ export function Experience() {
                             </div>
 
                             <div className="flex items-center gap-2">
-                              {doc.pdfUrl && (
-                                <Button
-                                  asChild
-                                  size="sm"
-                                  variant="outline"
-                                  className="font-mono text-xs gap-1.5 h-8"
-                                >
-                                  <a href={doc.pdfUrl} download>
-                                    <Download className="h-3.5 w-3.5 text-accent" />
-                                    <span>Download PDF</span>
-                                  </a>
-                                </Button>
-                              )}
                               {doc.verifyUrl && (
                                 <Button
                                   asChild

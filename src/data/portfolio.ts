@@ -319,7 +319,6 @@ export const experience = [
         badge: "Certificate",
         issuer: "FlyRank.ai · ID: FR-D11-FA8DB-52256",
         images: [flyrankBackendAi],
-        pdfUrl: "/downloads/flyrank-certificate.pdf",
         verifyUrl: "https://internship.flyrank.ai/verify?id=FR-D11-FA8DB-52256",
       },
       {
@@ -327,7 +326,6 @@ export const experience = [
         badge: "Letter of Recommendation",
         issuer: "Alen Malkoc, CEO · FlyRank.ai",
         images: [flyrankRecomP1, flyrankRecomP2],
-        pdfUrl: "/downloads/flyrank-recommendation-letter.pdf",
         verifyUrl: "https://internship.flyrank.ai/verify?id=FR-D10-4A2D2-7F7FF",
       },
       {
@@ -335,7 +333,6 @@ export const experience = [
         badge: "Evaluation Report",
         issuer: "Arijana Ibrović, Director · FlyRank.ai",
         images: [flyrankEvalP1, flyrankEvalP2],
-        pdfUrl: "/downloads/flyrank-evaluation-report.pdf",
         verifyUrl: "https://internship.flyrank.ai/verify?id=FR-D8-2C53C-C9AA4",
       },
     ],

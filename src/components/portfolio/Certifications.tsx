@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Section } from "./Section";
 import { certifications, certificateImages } from "@/data/portfolio";
-import { Award, Download, ChevronDown, ChevronUp, Sparkles, CheckCircle2, Eye, ShieldCheck } from "lucide-react";
+import { Award, ChevronDown, ChevronUp, Sparkles, CheckCircle2, Eye, ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Dialog,
@@ -35,7 +35,7 @@ export function Certifications() {
       id="certifications"
       eyebrow="05 / Accredited Credentials"
       title="Verified Certifications & Honors."
-      description="32 original scanned credentials across AI agent protocols, LLM engineering, open-source governance, cybersecurity, and cloud platforms."
+      description="33 original scanned credentials across AI agent protocols, LLM engineering, open-source governance, cybersecurity, and cloud platforms."
     >
       {/* Featured Top 3 Section (Always Visible) */}
       <div className="mb-10">
@@ -48,16 +48,6 @@ export function Certifications() {
               {isExpanded ? `Showing all ${certificateImages.length}` : `Displaying 3 spotlight credentials`}
             </span>
           </div>
-
-          <motion.a
-            href="/downloads/maaz-korejo-certificates.zip"
-            download="maaz-korejo-certificates.zip"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.96 }}
-            className="inline-flex items-center gap-2 font-mono text-xs px-4 py-2 rounded-lg bg-card text-foreground hover:bg-secondary border border-border transition-colors font-semibold"
-          >
-            <Download className="h-3.5 w-3.5 text-accent" /> Download All Credentials (.zip)
-          </motion.a>
         </div>
 
         {/* 3 Featured Spotlight Cards */}
@@ -155,7 +145,7 @@ export function Certifications() {
             ) : (
               <>
                 <ChevronDown className="h-4 w-4 text-accent transition-transform group-hover:translate-y-0.5" />
-                <span>View All 32 Certifications &amp; Credential Groups</span>
+                <span>View All 33 Certifications &amp; Credential Groups</span>
               </>
             )}
           </Button>
