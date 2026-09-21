@@ -97,6 +97,7 @@ export const projects = [
     tagline: "Open-Source AI Context Handoff CLI",
     live: "https://pypi.org/project/ctx-bridge",
     repo: "https://github.com/Maazkorejo/CTX-Bridge",
+    journal: "/blog/ctx-bridge-engineering-lab-note",
     stack: ["Python", "Typer CLI", "Rich", "pytest", "PyPI", "Git"],
     points: [
       "Engineered and published an open-source CLI developer tool (pip install ctx-bridge) to package codebase context with zero-friction handoff for LLMs (Claude, Cursor, ChatGPT).",

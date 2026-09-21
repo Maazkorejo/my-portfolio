@@ -1,7 +1,8 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { Section } from "./Section";
 import { projects, repos } from "@/data/portfolio";
-import { ExternalLink, Github, Terminal, Cpu, BrainCircuit, Bot, Trophy, ShieldAlert, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github, Terminal, Cpu, BrainCircuit, Bot, Trophy, ShieldAlert, ArrowUpRight, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUpItem, viewportOnce, viewportOnceTight } from "@/lib/motion";
 
@@ -106,6 +107,14 @@ function ProjectCard({ p }: { p: (typeof projects)[number] }) {
 
           {/* Action Links */}
           <div className="flex items-center gap-2 flex-shrink-0">
+            {'journal' in p && p.journal && (
+              <Link
+                to={p.journal as string}
+                className="inline-flex items-center gap-1.5 font-mono text-xs px-3.5 py-1.5 rounded-md border border-accent/40 bg-accent/10 hover:bg-accent/20 text-accent font-semibold transition-colors"
+              >
+                <BookOpen className="h-3.5 w-3.5" /> Research Note
+              </Link>
+            )}
             {p.live && (
               <motion.a
                 href={p.live}
