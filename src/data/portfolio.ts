@@ -6,7 +6,7 @@ export const personal = {
   phone: "+92 345 661 8618",
   linkedin: "https://linkedin.com/in/muhammad-maaz-korejo",
   github: "https://github.com/Maazkorejo",
-  bio: "AI Developer & Backend Engineer specializing in LLM-integrated systems, Intelligent Document Processing (IDP), and offline evaluation architectures. Former Backend AI Engineering Intern at FlyRank.ai, Research Fellow at INFERENCE Lab (llm-eval-kit), AI Developer Intern at Nebulark, and creator of open-source tooling (CTX-Bridge on PyPI). 3rd-year IT student at University of Sindh holding 12 Anthropic-verified credentials and Google AI Essentials specialization.",
+  bio: "AI Developer & Backend Engineer specializing in LLM-integrated systems, Intelligent Document Processing (IDP), and offline evaluation architectures. Former Backend AI Engineering Intern at FlyRank.ai, Implementation Fellow at INFERENCE Lab (llm-eval-kit, Grade A graduate), AI Developer Intern at Nebulark, and creator of open-source tooling (CTX-Bridge on PyPI). 3rd-year IT student at University of Sindh holding 12 Anthropic-verified credentials and Google AI Essentials specialization.",
 };
 
 export const skillGroups = [
@@ -239,6 +239,7 @@ import flyrankEvalP2 from "@/assets/certs_real/flyrank-evaluation-report-page-2.
 
 import flyrankLogo from "@/assets/flyrank-logo.svg";
 import inferenceLabLogo from "@/assets/inference-lab-logo.png";
+import inferenceLabCert from "@/assets/certs_real/inference-lab-fellowship.jpg";
 import pitpLogo from "@/assets/pitp-logo.webp";
 
 import forageDatacom from "@/assets/certs_real/forage-datacom-cybersec.jpg";
@@ -282,6 +283,7 @@ export const certificateImages = [
 
   // Industry Engineering & Program Honors
   { title: "Backend AI Engineering Internship", issuer: "FlyRank.ai", src: flyrankBackendAi, image: flyrankBackendAi },
+  { title: "Engineering Fellowship Program (Grade A)", issuer: "INFERENCE Lab · llm-eval-kit", src: inferenceLabCert, image: inferenceLabCert },
 
   // Cybersecurity & Professional Simulations
   { title: "Cyber Security Operations Job Simulation", issuer: "Datacom · Forage", src: forageDatacom, image: forageDatacom },
@@ -357,12 +359,22 @@ export const experience = [
     role: "Research / Implementation Engineer",
     org: "INFERENCE Lab Fellowship",
     logo: inferenceLabLogo,
-    period: "Jul 2026 – Present",
-    badge: "Cohort 01",
+    period: "Jul – Sep 2026",
+    badge: "Completed (Grade A)",
     points: [
       "Selected from 130+ applicants for Cohort 01 building llm-eval-kit, an open-source, pip-installable Python library for offline, deterministic LLM evaluation.",
       "Designed and implemented 4 core evaluation modules (Factual Grounding, Relevance, Refusal Detection, Completeness) with zero external LLM-as-judge API calls using local sentence-transformers (all-MiniLM-L6-v2).",
       "Engineered thread-safe singleton embedding model loader and numeric-mismatch verification layer to prevent false positives in semantic similarity scoring.",
+      "Successfully completed the Engineering Fellowship Program with top evaluation grade 'A' and outstanding contribution award for the llm-eval-kit open-source core.",
+    ],
+    documents: [
+      {
+        title: "Certificate of Achievement — Engineering Fellowship Program",
+        badge: "Certificate · Grade A",
+        issuer: "INFERENCE Lab · ID: IL-EF-2026-0006",
+        images: [inferenceLabCert],
+        verifyUrl: "https://www.inference-lab.org",
+      },
     ],
   },
   {
@@ -444,7 +456,7 @@ export const certifications = [
     issuer: "Research & Industry Honors",
     items: [
       { name: "Backend AI Engineering Internship — Certificate of Completion", issuer: "FlyRank.ai", date: "Sep 2026" },
-      { name: "INFERENCE Lab Fellowship — Cohort 01 Fellow", issuer: "INFERENCE Lab", date: "Jul 2026" },
+      { name: "INFERENCE Lab Fellowship — Certificate of Achievement (Grade A)", issuer: "INFERENCE Lab", date: "Sep 2026" },
       { name: "Top Participant — HEC/NAVTTC ACT AI SkillBridge", issuer: "HEC / NAVTTC", date: "2026" },
       { name: "McKinsey Forward Program", issuer: "McKinsey.org", date: "Jun 2026" },
     ],

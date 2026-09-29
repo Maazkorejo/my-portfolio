@@ -293,7 +293,7 @@ export default function Home() {
                   <Award className="h-3.5 w-3.5" /> Verified Certs
                 </p>
                 <p className="text-muted-foreground text-[11px] leading-relaxed">
-                  32 original scanned credentials (12 Anthropic + Google + Linux).
+                  33 original scanned credentials (12 Anthropic + Google + Linux + INFERENCE Lab).
                 </p>
               </div>
             </div>

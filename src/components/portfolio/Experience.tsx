@@ -68,7 +68,7 @@ export function Experience() {
                         className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono ${
                           e.badge === "Current Role"
                             ? "bg-accent/10 text-accent border border-accent/20"
-                            : e.badge === "Completed Track"
+                            : e.badge?.includes("Completed")
                             ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                             : "bg-secondary text-muted-foreground border border-border"
                         }`}

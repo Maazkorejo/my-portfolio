@@ -29,7 +29,7 @@ export default function ExperiencePage() {
           <div className="space-y-2 max-w-xl">
             <h3 className="font-display text-2xl font-bold text-foreground">Review my verified credentials</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Explore 32 accredited certifications from Anthropic, Google, Linux Foundation, IBM, and more.
+              Explore 33 accredited certifications from Anthropic, Google, Linux Foundation, INFERENCE Lab, IBM, and more.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">

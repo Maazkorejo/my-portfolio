@@ -17,7 +17,7 @@ export function About() {
             I am a 3rd-year BS Information Technology student at the University of Sindh, Jamshoro,
             focusing on the practical engineering challenges of deploying AI to production.
             Currently an <strong className="text-foreground">AI Developer Intern at Nebulark</strong> (building IDP SaaS)
-            and a <strong className="text-foreground">Research Implementation Fellow at INFERENCE Lab</strong> (Cohort 01).
+            and a graduate <strong className="text-foreground">Research Implementation Fellow at INFERENCE Lab</strong> (Cohort 01, Grade A).
           </p>
           <p>
             I care deeply about the parts most AI tutorials skip: state machines for multi-agent workflows,

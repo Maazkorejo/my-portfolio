@@ -210,7 +210,7 @@ export function Certifications() {
               <div className="flex items-center justify-between gap-4 flex-wrap">
                 <div>
                   <h3 className="font-display text-2xl font-bold tracking-tight">
-                    All 32 Verified Original Certificates
+                    All {certificateImages.length} Verified Original Certificates
                   </h3>
                   <p className="text-sm text-muted-foreground mt-1">
                     Click any certificate to open high-resolution verified view.
