@@ -13,7 +13,10 @@ import {
   Clock, 
   Calendar,
   Layers,
-  Sparkles
+  Sparkles,
+  Building2,
+  Users,
+  Award
 } from "lucide-react";
 import { posts } from "@/data/posts";
 import { Button } from "@/components/ui/button";
@@ -37,6 +40,12 @@ export default function BlogPost() {
     );
   }
 
+  const installCmd = post.project?.includes("llm-eval-kit")
+    ? "pip install llm-eval-kit"
+    : post.project?.includes("CTX-Bridge")
+    ? "pip install ctx-bridge"
+    : null;
+
   const copyToClipboard = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
     setCopiedCode(id);
@@ -44,7 +53,8 @@ export default function BlogPost() {
   };
 
   const copyInstallCmd = () => {
-    navigator.clipboard.writeText("pip install ctx-bridge");
+    if (!installCmd) return;
+    navigator.clipboard.writeText(installCmd);
     setCopiedInstall(true);
     setTimeout(() => setCopiedInstall(false), 2000);
   };
@@ -256,17 +266,14 @@ export default function BlogPost() {
                           className="hover:bg-accent/5 transition-colors"
                         >
                           {cells.map((cell, cIdx) => {
-                            const isDeltaCol = cIdx === 3;
+                            const isHighlight = cIdx === 3 || cIdx === 2;
                             const isMetricCol = cIdx === 0;
-                            const isSingleShotCol = cIdx === 2;
                             return (
                               <td
                                 key={cIdx}
                                 className={`px-4 py-3 font-mono text-xs sm:text-sm ${
-                                  isDeltaCol
+                                  isHighlight
                                     ? "font-semibold text-accent"
-                                    : isSingleShotCol
-                                    ? "font-semibold text-foreground"
                                     : isMetricCol
                                     ? "font-medium text-foreground"
                                     : "text-muted-foreground"
@@ -412,6 +419,45 @@ export default function BlogPost() {
         </span>
       </div>
 
+      {/* Official External Publication Banner */}
+      {post.officialUrl && (
+        <div className="mb-8 rounded-2xl border border-accent/40 bg-gradient-to-r from-card via-card to-accent/10 p-5 sm:p-6 shadow-lg">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-start sm:items-center gap-3.5">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15 border border-accent/30 text-accent flex-shrink-0">
+                <Building2 className="h-6 w-6" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap mb-1">
+                  <span className="rounded-full bg-accent/20 px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-accent border border-accent/30">
+                    Official External Publication
+                  </span>
+                  <span className="font-mono text-xs text-muted-foreground font-semibold">
+                    {post.publisher || "INFERENCE Lab"}
+                  </span>
+                </div>
+                <h3 className="font-display text-base sm:text-lg font-bold text-foreground">
+                  Published on {post.publisher || "INFERENCE Lab"}'s Official Engineering Journal
+                </h3>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  Peer-reviewed engineering documentation and fellowship project record.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href={post.officialUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-mono text-xs px-4 py-2.5 rounded-xl bg-accent text-accent-foreground font-semibold hover:opacity-90 transition-all shadow-md self-start sm:self-auto flex-shrink-0"
+            >
+              <span>View Official Lab Note</span>
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* Article Header */}
       <header className="mb-10">
         <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-muted-foreground mb-4">
@@ -457,27 +503,41 @@ export default function BlogPost() {
               <span className="text-foreground font-semibold">{post.project}</span>
             </div>
             <div>
-              <span className="text-muted-foreground block mb-0.5">Principal Author</span>
+              <span className="text-muted-foreground block mb-0.5">Publisher / Program</span>
+              <span className="text-foreground font-semibold">{post.publisher || "Independent Lab Note"}</span>
+            </div>
+            <div>
+              <span className="text-muted-foreground block mb-0.5">Authors &amp; Contributors</span>
               <span className="text-foreground font-semibold">{post.author || "Maaz Korejo"}</span>
             </div>
             <div>
               <span className="text-muted-foreground block mb-0.5">Classification</span>
               <span className="text-foreground font-semibold">{post.classification}</span>
             </div>
-            <div>
-              <span className="text-muted-foreground block mb-0.5">Release Version</span>
-              <span className="text-accent font-semibold">{post.version}</span>
-            </div>
           </div>
 
           {/* Action links */}
           <div className="mt-5 pt-4 border-t border-border flex flex-wrap items-center gap-3">
+            {post.officialUrl && (
+              <a
+                href={post.officialUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 font-mono text-xs px-3.5 py-1.5 rounded-md bg-accent text-accent-foreground font-semibold hover:opacity-90 transition-opacity"
+              >
+                <Building2 className="h-3.5 w-3.5" /> Official Journal Link
+              </a>
+            )}
             {post.pypi && (
               <a
                 href={post.pypi}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 font-mono text-xs px-3.5 py-1.5 rounded-md bg-accent text-accent-foreground font-semibold hover:opacity-90 transition-opacity"
+                className={`inline-flex items-center gap-1.5 font-mono text-xs px-3.5 py-1.5 rounded-md ${
+                  post.officialUrl
+                    ? "border border-border bg-secondary hover:bg-secondary/80 text-foreground"
+                    : "bg-accent text-accent-foreground font-semibold hover:opacity-90"
+                } transition-colors`}
               >
                 <Terminal className="h-3.5 w-3.5" /> PyPI Package
               </a>
@@ -492,24 +552,64 @@ export default function BlogPost() {
                 <Github className="h-3.5 w-3.5" /> GitHub Repository
               </a>
             )}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={copyInstallCmd}
-              className="font-mono text-xs gap-1.5 h-8 border-dashed"
-            >
-              {copiedInstall ? (
-                <>
-                  <Check className="h-3.5 w-3.5 text-emerald-400" />
-                  <span className="text-emerald-400">Copied install cmd</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="h-3.5 w-3.5" />
-                  <span>pip install ctx-bridge</span>
-                </>
-              )}
-            </Button>
+            {installCmd && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={copyInstallCmd}
+                className="font-mono text-xs gap-1.5 h-8 border-dashed"
+              >
+                {copiedInstall ? (
+                  <>
+                    <Check className="h-3.5 w-3.5 text-emerald-400" />
+                    <span className="text-emerald-400">Copied install cmd</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="h-3.5 w-3.5" />
+                    <span>{installCmd}</span>
+                  </>
+                )}
+              </Button>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Engineering Contributors Card if available */}
+      {post.contributors && post.contributors.length > 0 && (
+        <div className="my-8 rounded-xl border border-border bg-card/60 p-5">
+          <div className="flex items-center gap-2 mb-3.5 font-mono text-xs uppercase tracking-wider font-bold text-foreground">
+            <Users className="h-4 w-4 text-accent" />
+            <span>Fellowship Engineering Team &amp; Authors</span>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            {post.contributors.map((c, cIdx) => (
+              <div
+                key={cIdx}
+                className="rounded-lg border border-border/80 bg-background/80 p-3.5 flex flex-col justify-between"
+              >
+                <div>
+                  <h4 className="font-display text-sm font-bold text-foreground">
+                    {c.name}
+                  </h4>
+                  <p className="font-mono text-xs text-accent mt-0.5 font-medium">
+                    {c.role}
+                  </p>
+                </div>
+                {c.profileUrl && (
+                  <a
+                    href={c.profileUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-mono text-[11px] text-muted-foreground hover:text-foreground inline-flex items-center gap-1 mt-3 pt-2 border-t border-border/50 transition-colors"
+                  >
+                    <span>Lab Profile</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       )}
@@ -538,6 +638,32 @@ export default function BlogPost() {
         {renderContentBlocks(post.content)}
       </div>
 
+      {/* Rights & Attribution Notice */}
+      {post.rightsNotice && (
+        <div className="my-10 rounded-xl border border-accent/30 bg-accent/5 p-5 font-mono text-xs text-muted-foreground leading-relaxed">
+          <div className="flex items-center gap-2 text-foreground font-semibold uppercase tracking-wider mb-2">
+            <ShieldCheck className="h-4 w-4 text-accent" />
+            <span>Institutional Attribution &amp; Rights Notice</span>
+          </div>
+          <p className="text-muted-foreground mb-3">{post.rightsNotice}</p>
+          {post.officialUrl && (
+            <div className="pt-3 border-t border-accent/20 flex items-center justify-between gap-2 flex-wrap">
+              <span className="text-[11px] text-muted-foreground truncate">
+                Canonical URL: <span className="text-foreground">{post.officialUrl}</span>
+              </span>
+              <a
+                href={post.officialUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-accent hover:underline font-semibold inline-flex items-center gap-1 text-[11px] flex-shrink-0"
+              >
+                Inspect Official Publication &rarr;
+              </a>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Citation & Project Footnote */}
       <div className="mt-16 pt-8 border-t border-border/80">
         <div className="rounded-xl border border-border bg-card p-6">
@@ -546,7 +672,15 @@ export default function BlogPost() {
             Citation & Reference
           </h3>
           <p className="text-xs text-muted-foreground font-mono mb-4 leading-relaxed">
-            Korejo, M. (2026). <em>Engineering Lab Note: Architecture, Economics, and Security of Cross-Session AI Context Handoffs</em>. CTX-Bridge Research Series, v0.1.1.
+            {post.project?.includes("llm-eval-kit") ? (
+              <>
+                Baig, M., Arshad, W., &amp; Korejo, M. (2026). <em>Building a Deterministic Offline Evaluation Engine for LLM Systems</em>. INFERENCE Lab Engineering Journal. Available at: {post.officialUrl || "https://www.inference-lab.org"}
+              </>
+            ) : (
+              <>
+                Korejo, M. (2026). <em>Engineering Lab Note: Architecture, Economics, and Security of Cross-Session AI Context Handoffs</em>. CTX-Bridge Research Series, v0.1.1.
+              </>
+            )}
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <Link

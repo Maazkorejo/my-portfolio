@@ -12,11 +12,160 @@ export type Post = {
   classification?: string;
   github?: string;
   pypi?: string;
+  officialUrl?: string;
+  publisher?: string;
+  rightsNotice?: string;
+  contributors?: { name: string; role: string; profileUrl?: string }[];
   featured?: boolean;
   stats?: { label: string; value: string }[];
 };
 
 export const posts: Post[] = [
+  {
+    slug: "deterministic-offline-evaluation-engine-llm-eval-kit",
+    title: "Building a Deterministic Offline Evaluation Engine for LLM Systems",
+    date: "2026-09-19",
+    readTime: "6 min read",
+    tag: "Offline LLM Evaluation & CI/CD",
+    featured: true,
+    author: "Mahrukh Baig (Lead), Warisha Arshad (Evaluation), Muhammad Maaz (Implementation)",
+    project: "llm-eval-kit",
+    version: "v0.2.0",
+    classification: "Trustworthy AI / Offline Evaluation / LLM Systems Engineering",
+    publisher: "INFERENCE Lab",
+    officialUrl: "https://www.inference-lab.org/engineering/journal/llm-eval-kit-1789849273759",
+    github: "https://github.com/Inference-LAB/llm-eval-kit",
+    pypi: "https://pypi.org/project/llm-eval-kit/",
+    rightsNotice:
+      "© 2026 INFERENCE Lab. Originally published on the official INFERENCE Lab Engineering Journal. All intellectual rights reserved by INFERENCE Lab (Applied AI Research and Engineering Lab, Multan, Pakistan). Authored during the Engineering Fellowship Program (Cohort 2026). Shared here as an authorized technical portfolio record by Muhammad Maaz (Implementation Engineer). All artefacts are open and reproducible.",
+    contributors: [
+      {
+        name: "Mahrukh Baig",
+        role: "Lead Engineer",
+        profileUrl: "https://www.inference-lab.org/people/mahrukh-baig",
+      },
+      {
+        name: "Warisha Arshad",
+        role: "Evaluation Engineer",
+        profileUrl: "https://www.inference-lab.org/people/warisha-arshad",
+      },
+      {
+        name: "Muhammad Maaz",
+        role: "Implementation Engineer",
+        profileUrl: "https://www.inference-lab.org/people/muhammad-maaz",
+      },
+    ],
+    stats: [
+      { label: "Test Coverage", value: "93% (88 Tests)" },
+      { label: "Network IO", value: "Zero Network" },
+      { label: "CI Matrix", value: "Py 3.9 – 3.12" },
+      { label: "Verification", value: "Hybrid Sem+Sym" },
+    ],
+    excerpt:
+      "We redesigned llm-eval-kit into a deterministic, zero-network evaluation pipeline built for continuous evaluation in CI/CD without relying on costly, privacy-compromising, or non-deterministic LLM-as-a-judge APIs.",
+    content: `# Building a Deterministic Offline Evaluation Engine for LLM Systems
+
+**Project**: \`llm-eval-kit\`  
+**Program**: INFERENCE Lab Engineering Fellowship · Cohort 2026  
+**Publisher**: INFERENCE Lab ([Official Journal Publication](https://www.inference-lab.org/engineering/journal/llm-eval-kit-1789849273759))  
+**Authors**: Mahrukh Baig (Lead Engineer), Warisha Arshad (Evaluation Engineer), Muhammad Maaz (Implementation Engineer)  
+**Artifacts**: [GitHub Repository](https://github.com/Inference-LAB/llm-eval-kit) | [PyPI Package](https://pypi.org/project/llm-eval-kit/) | [Official Lab Note](https://www.inference-lab.org/engineering/journal/llm-eval-kit-1789849273759)  
+**Classification**: Trustworthy AI / Offline Evaluation / LLM Systems Engineering  
+
+---
+
+## 1. Abstract & Motivation
+
+We redesigned \`llm-eval-kit\` into a deterministic, zero-network evaluation pipeline built for reliable continuous evaluation in CI/CD environments. The new architecture introduces a decoupled criteria registry, fail-fast orchestration, hybrid semantic and symbolic verification, and graceful handling of inapplicable evaluation criteria.
+
+The implementation reached **93% test coverage across 88 tests**, with cross-version CI validation from Python 3.9 to 3.12. The work demonstrates how carefully defined evaluation contracts and offline heuristics can provide reproducible, privacy-preserving model assessment without relying on external LLM-as-a-judge APIs.
+
+### The Problem with Cloud-Bound LLM Judges
+
+\`llm-eval-kit\`'s pipeline originally lacked a deterministic, offline evaluation harness, forcing teams to rely on non-deterministic "LLM-as-a-judge" cloud APIs or slow manual reviews. This created several critical operational failure modes:
+1. **Latency Bottlenecks**: Synchronous cloud API roundtrips created massive slowdowns during automated pull request testing.
+2. **Per-Token Cost Overhead**: Continuous automated evaluation generated unsustainable API expenditures.
+3. **Data Privacy & Exfiltration Risks**: Sensitive context and prompt pairs had to leave local/VPC execution boundaries.
+4. **Non-Deterministic & Flaky Scores**: Prompt variance and cloud model drift produced non-reproducible scores that broke automated test pipelines.
+
+This project set out to permanently close that gap.
+
+---
+
+## 2. Systems Architecture & What Changed
+
+The pipeline transitioned from monolithic, ad-hoc checks into a decoupled, layered evaluation engine:
+* **Decoupled Criteria Registry**: A decorator-based registry isolates criteria definitions from the evaluation lifecycle.
+* **Fail-Fast Orchestrator**: Validates inputs, schemas, and requirements before invoking computationally dense embeddings.
+* **Hybrid Verification Engine**: Combines dense semantic sentence embeddings with an orthogonal symbolic parser to verify numeric claims.
+* **Graceful Degradation Aggregator**: Employs a deliberate three-valued scoring model to cleanly exclude ungrounded checks rather than penalizing missing reference context.
+* **Packaging & Developer Ergonomics**: Integrated a zero-overhead CLI, multilingual Urdu heuristics, and strict wheel packaging rules.
+
+### Decoupled Criteria Registry via Micro-Kernel Pattern
+
+To scale across diverse evaluation checks without creating a fragile orchestrator, we adapted a micro-kernel registry pattern where criteria functions self-register via \`@register_criterion\` into a centralized dispatch table:
+
+\`\`\`python
+# criteria/registry.py
+_CRITERIA_REGISTRY = {}
+
+def register_criterion(name: str):
+    """Decorator to register evaluation criteria into the central dispatch table."""
+    def decorator(fn):
+        _CRITERIA_REGISTRY[name] = fn
+        return fn
+    return decorator
+\`\`\`
+
+The central \`Evaluator\` interacts solely with this registry interface, ensuring new criteria require no orchestrator modifications.
+
+---
+
+## 3. Hybrid Semantic & Symbolic Verification
+
+Standard semantic similarity embeddings exhibit a dangerous vulnerability: syntactically identical sentences with conflicting numbers (such as *"water boils at 50°C"* versus *"100°C"*) are treated as near-identical (~0.90 cosine similarity).
+
+To solve this, we paired dense sentence embeddings with an orthogonal symbolic parser in \`numeric_utils.py\`:
+
+| Verification Dimension | Dense Semantic Embeddings | Symbolic Numeric Parser (\`numeric_utils.py\`) | Hybrid Synthesis |
+| :--- | :--- | :--- | :--- |
+| **Numeric Discrepancies** | Blind (~0.90 similarity on conflicting values) | Extracts numeric claims & canonicalizes units | Caps unsupported claims at **0.30** |
+| **Unit Conversions** | Inconsistent across scales | Synonym mappings & scale normalization | Exact numeric parity checking |
+| **Network Dependency** | Zero (local \`all-MiniLM-L6-v2\` weights) | Zero (pure Python AST/regex parsing) | **100% Offline Execution** |
+| **Compute Overhead** | ~100–250ms per batch | < 2ms execution latency | Minimal impact on test execution |
+
+The hybrid parser extracts numeric claims across scales, canonicalizes units through synonym mappings, and validates response claims against the context's numeric union, capping unsupported claims at 0.30. This design combines dense representations with fast symbolic sanity checks, acting as an offline consistency heuristic rather than open-world factual verification.
+
+---
+
+## 4. Engineering Outcomes & CI/CD Hardening
+
+Automated test coverage grew from initial prototype checks to **88 tests across 9 test suites**, raising overall test coverage to **93 percent**.
+
+### Pre-Review Defect Elimination
+
+These tests caught three critical real-world defects before review:
+1. **Backward-Compatibility Failure on Python 3.9**: Caused by Python 3.10 union syntax (\`|\`), resolved with backward-compatible type annotations.
+2. **Missing Configuration JSONs in Wheel Archives**: Static configuration JSONs were omitted in packaged builds, resolved via explicit \`package-data\` rules in \`pyproject.toml\`.
+3. **Empty Input Cosine Similarity Artifacts**: Non-zero cosine similarity artifacts on empty inputs caused by BERT \`[CLS]\` and \`[SEP]\` tokens, resolved with pre-encoding guards.
+
+A CI matrix workflow now runs the full test suite across **Python 3.9, 3.10, 3.11, and 3.12** on every push and pull request.
+
+---
+
+## 5. Key Engineering Lessons
+
+1. **Fail-Fast Validation**: Enforcing strict input verification before computing expensive embeddings prevents unnecessary compute utilization.
+2. **Explicit Interface Contracts**: Maintaining explicit interface contracts across criteria boundaries allows parallel feature additions without merge friction.
+3. **Graceful Degradation with 3-Valued Scoring**: A naive aggregation treats an unexecuted check as a zero, but penalizing a model when reference context is absent misrepresents its actual quality. Implementing a deliberate three-valued scoring model—where inapplicable criteria return \`score: None\` with an explanation and are cleanly excluded from the composite average—ensures the pipeline distinguishes between an LLM failing a check and the pipeline lacking the context to evaluate it.
+
+---
+
+## 6. Official Attribution & Rights
+
+* **Original Publication**: This engineering lab note was originally researched, authored, and published on the **INFERENCE Lab Engineering Journal** at [https://www.inference-lab.org/engineering/journal/llm-eval-kit-1789849273759](https://www.inference-lab.org/engineering/journal/llm-eval-kit-1789849273759).
+* **Copyright & Rights**: © 2026 INFERENCE Lab. All intellectual rights for the publication and fellowship program documentation belong to INFERENCE Lab. Shared here as an authorized technical portfolio record by Muhammad Maaz (Implementation Engineer). All artefacts are open and reproducible under open-source licenses.`,
+  },
   {
     slug: "ctx-bridge-engineering-lab-note",
     title: "Engineering Lab Note: Architecture, Economics, and Security of Cross-Session AI Context Handoffs",

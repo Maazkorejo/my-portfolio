@@ -71,7 +71,7 @@ export function BlogPreview() {
                 Read research paper <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <span className="font-mono text-xs text-muted-foreground">
-                {featuredPost.version || "v0.1.1"} · PyPI & GitHub
+                {featuredPost.publisher ? `${featuredPost.publisher} · PyPI & GitHub` : `${featuredPost.version || "v0.1.1"} · PyPI & GitHub`}
               </span>
             </div>
           </div>

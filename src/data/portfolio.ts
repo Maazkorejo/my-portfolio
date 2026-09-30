@@ -110,6 +110,7 @@ export const projects = [
     tagline: "Offline LLM Evaluation Library",
     live: "https://pypi.org/project/llm-eval-kit",
     repo: "https://github.com/Inference-LAB/llm-eval-kit",
+    journal: "/blog/deterministic-offline-evaluation-engine-llm-eval-kit",
     stack: ["Python", "sentence-transformers", "PyTorch", "NumPy", "pytest", "Scikit-learn"],
     points: [
       "Built an open-source, lightweight Python library for offline, deterministic LLM response evaluation without costly LLM-as-a-judge API calls.",
