@@ -8,6 +8,7 @@ import {
   LayoutTemplate,
   Workflow,
   FileText,
+  ShieldCheck,
   LucideIcon,
 } from "lucide-react";
 import { staggerContainer, fadeUpItem, viewportOnce } from "@/lib/motion";
@@ -19,6 +20,7 @@ const iconMap: Record<string, LucideIcon> = {
   LayoutTemplate,
   Workflow,
   FileText,
+  ShieldCheck,
 };
 
 export function Skills() {
@@ -27,7 +29,7 @@ export function Skills() {
       id="skills"
       eyebrow="02 / Master Tech Stack"
       title="Capabilities & Technical Directory."
-      description="5 structured layers spanning LLM engineering, OCR document intelligence, classical ML, cloud backends, and test automation."
+      description="6 structured capability layers spanning LLM engineering, cybersecurity & SAST, document OCR pipelines, classical ML, cloud backends & DevSecOps, and desktop IDE architectures."
     >
       <motion.div
         variants={staggerContainer(0.08)}

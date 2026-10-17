@@ -36,16 +36,16 @@ const coreInitiatives = [
   },
   {
     category: "Full-Stack AI Stack",
-    statusTag: "5 System Layers",
+    statusTag: "6 System Layers",
     title: "Master Tech Stack",
-    desc: "Comprehensive capability directory covering LLM engineering, OCR/IDP pipelines, classical ML, cloud backends, and test suites.",
+    desc: "Comprehensive capability directory covering LLM engineering, cybersecurity & SAST, OCR/IDP pipelines, classical ML, cloud backends, and desktop IDEs.",
     href: "/skills",
     icon: Sparkles,
     highlights: [
-      "Model Context Protocol & Claude Code",
+      "NVIDIA Nemotron & Claude Code",
+      "Static Code Analysis (AST & SAST)",
       "MinerU, Docling & Mistral-OCR-4",
-      "PostgreSQL RLS tenant isolation",
-      "100% pytest test coverage discipline",
+      "Docker Sandboxing & OASIS SARIF",
     ],
   },
   {
