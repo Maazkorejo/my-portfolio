@@ -28,10 +28,10 @@ const coreInitiatives = [
     href: "/projects",
     icon: FolderGit2,
     highlights: [
+      "Kestrel AI DevSecOps IDE (NVIDIA Nemotron)",
       "CTX-Bridge context handoff CLI (PyPI)",
       "llm-eval-kit offline evaluation library",
       "Self-RAG engine on Groq LLaMA 3.3 70B",
-      "Alfred agentic assistant with 14 tools",
     ],
   },
   {
@@ -243,11 +243,10 @@ export default function Home() {
                 <ShieldCheck className="h-3.5 w-3.5" /> High-Throughput Engineering
               </span>
               <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-balance">
-                From offline LLM evaluation to cost-optimized hybrid IDP routing.
+                From cybersecurity IDEs and offline LLM evaluation to cost-optimized hybrid IDP routing.
               </h2>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed text-pretty">
-                Engineering real systems under resource constraints: benchmarked 14 OCR parsers, built a 3.3x speedup Ray actor pipeline,
-                designed deterministic evaluation modules at INFERENCE Lab, and shipped developer tools to PyPI.
+                Engineering real systems under resource constraints: built Kestrel AI with deterministic AST static analysis and NVIDIA Nemotron patch synthesis, benchmarked 14 OCR parsers at Nebulark, designed deterministic evaluation modules at INFERENCE Lab, and shipped developer tools to PyPI.
               </p>
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <Button asChild className="font-mono text-xs uppercase tracking-wider font-semibold">

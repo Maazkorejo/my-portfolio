@@ -25,8 +25,7 @@ export function About() {
             without expensive LLM-as-a-judge calls, strict PostgreSQL Row-Level Security tenant isolation, and comprehensive test suites (100% pytest coverage).
           </p>
           <p>
-            Creator of <strong className="text-foreground">CTX-Bridge</strong>, an open-source context handoff CLI tool published on PyPI,
-            and co-author of <strong className="text-foreground">llm-eval-kit</strong>, an offline evaluation library designed for reproducible AI assessment.
+            Creator of <strong className="text-foreground">Kestrel AI</strong> (an AI-native cybersecurity IDE combining deterministic AST audits with NVIDIA Nemotron 3.5 patch synthesis) and <strong className="text-foreground">CTX-Bridge</strong> (an open-source context handoff CLI published on PyPI), and co-author of <strong className="text-foreground">llm-eval-kit</strong>, an offline evaluation library designed for reproducible AI assessment.
           </p>
 
           {/* 3 Principles Block */}

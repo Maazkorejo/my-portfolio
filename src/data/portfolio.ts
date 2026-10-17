@@ -1,3 +1,11 @@
+// Kestrel AI Project Assets & Screenshots
+import kestrelWorkspace from "@/assets/kestrel/kestrel_ide_workspace.png";
+import kestrelSecurityAudit from "@/assets/kestrel/kestrel_security_audit.png";
+import kestrelAiChat from "@/assets/kestrel/kestrel_ai_chat.png";
+import kestrelPatchDiff from "@/assets/kestrel/kestrel_patch_diff.png";
+import kestrelThreatIntel from "@/assets/kestrel/kestrel_threat_intel.png";
+import kestrelSymbol from "@/assets/kestrel/kestrel-symbol.svg";
+
 export const personal = {
   name: "Muhammad Maaz Korejo",
   title: "AI Developer · Backend Engineer",
@@ -6,7 +14,7 @@ export const personal = {
   phone: "+92 345 661 8618",
   linkedin: "https://linkedin.com/in/muhammad-maaz-korejo",
   github: "https://github.com/Maazkorejo",
-  bio: "AI Developer & Backend Engineer specializing in LLM-integrated systems, Intelligent Document Processing (IDP), and offline evaluation architectures. Former Backend AI Engineering Intern at FlyRank.ai, Implementation Fellow at INFERENCE Lab (llm-eval-kit, Grade A graduate), AI Developer Intern at Nebulark, and creator of open-source tooling (CTX-Bridge on PyPI). 3rd-year IT student at University of Sindh holding 12 Anthropic-verified credentials and Google AI Essentials specialization.",
+  bio: "AI Developer & Backend Engineer specializing in LLM-integrated systems, cybersecurity tooling, Intelligent Document Processing (IDP), and offline evaluation architectures. Creator of Kestrel AI (AI-native cybersecurity IDE) and CTX-Bridge (open-source context CLI on PyPI). Former Backend AI Engineering Intern at FlyRank.ai, Implementation Fellow at INFERENCE Lab (llm-eval-kit, Grade A graduate), AI Developer Intern at Nebulark, holding 12 Anthropic-verified credentials and Google AI Essentials specialization.",
 };
 
 export const skillGroups = [
@@ -14,6 +22,7 @@ export const skillGroups = [
     label: "AI & LLM Engineering",
     icon: "Sparkles",
     items: [
+      "NVIDIA Nemotron 3.5",
       "Claude / Anthropic API",
       "Claude Code (Subagents & Agent Skills)",
       "Model Context Protocol (MCP)",
@@ -93,6 +102,63 @@ export const skillGroups = [
 
 export const projects = [
   {
+    name: "Kestrel AI",
+    tagline: "AI-Native Cybersecurity IDE & DevSecOps Platform",
+    live: "https://kestrel-website-sigma.vercel.app/",
+    repo: "https://github.com/Maazkorejo/Kestrel",
+    releases: "https://github.com/Maazkorejo/Kestrel/releases",
+    download: "https://github.com/Maazkorejo/Kestrel/releases/latest/download/Kestrel-Setup-1.0.0.exe",
+    image: kestrelWorkspace,
+    symbol: kestrelSymbol,
+    screenshots: [
+      {
+        title: "Monaco IDE Workspace",
+        description: "In-memory file tree, tabbed Monaco code editor, and clean guarded workspace status.",
+        image: kestrelWorkspace,
+      },
+      {
+        title: "AST Security Audit Engine",
+        description: "Deterministic in-memory AST vulnerability scanner detecting CWE-489, CWE-89, and CWE-78 with security scoring (87/100).",
+        image: kestrelSecurityAudit,
+      },
+      {
+        title: "NVIDIA Nemotron AI Copilot",
+        description: "Context-aware vulnerability assistant powered by NVIDIA Nemotron 3.5 diagnosing CWE-78 root causes and synthesizing mitigations.",
+        image: kestrelAiChat,
+      },
+      {
+        title: "Unified Git Diff & Patch",
+        description: "Side-by-side split diff modal showing vulnerable lines vs defensive fixes with 1-click apply to disk.",
+        image: kestrelPatchDiff,
+      },
+      {
+        title: "Live Threat Intelligence",
+        description: "Tavily-grounded threat cards with CVE-2020-10987, CVSS 9.8 score, and exploit triggers.",
+        image: kestrelThreatIntel,
+      },
+    ],
+    stack: [
+      "Python",
+      "FastAPI",
+      "React",
+      "TypeScript",
+      "Monaco Editor",
+      "Electron",
+      "NVIDIA Nemotron",
+      "Docker",
+      "Tavily API",
+      "Tailwind CSS",
+      "SARIF",
+    ],
+    points: [
+      "Architected an open-source, AI-native cybersecurity IDE combining deterministic AST static analysis, real-time Tavily threat intelligence, and NVIDIA Nemotron 3.5 defensive patch synthesis.",
+      "Engineered 100% deterministic AST parser detecting OWASP Top 10 vulnerabilities (CWE-89, CWE-78, CWE-22, CWE-502) in volatile memory with zero LLM hallucination.",
+      "Built a privacy-first data guard using Shannon entropy secret redaction to strip AWS tokens, OpenAI keys, and credentials before LLM dispatch.",
+      "Integrated live threat grounding via Tavily API correlating detected flaws with real CVE records, CVSS 9.8 severity metrics, and NVD mitigations.",
+      "Delivered one-click unified git diff patch synthesis with automated attack verification in isolated Docker sandboxes and enterprise SARIF 2.1.0 CI/CD export.",
+    ],
+  },
+  {
     name: "CTX-Bridge",
     tagline: "Open-Source AI Context Handoff CLI",
     live: "https://pypi.org/project/ctx-bridge",
@@ -169,6 +235,13 @@ export const projects = [
 ];
 
 export const repos = [
+  {
+    name: "Kestrel",
+    description: "Open-source AI-native cybersecurity IDE: deterministic AST audit, real-time CVE threat intelligence, and NVIDIA Nemotron patch synthesis.",
+    url: "https://github.com/Maazkorejo/Kestrel",
+    homepage: "https://kestrel-website-sigma.vercel.app/",
+    language: "TypeScript / Python",
+  },
   {
     name: "Alfred-Personal-Assistant",
     description: "LangGraph-based personal AI operating assistant with 14 custom tools and pgvector memory.",
