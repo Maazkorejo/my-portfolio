@@ -23,6 +23,7 @@ export function SiteFooter() {
           <Link to="/projects" className="hover:text-accent transition-colors">Projects</Link>
           <Link to="/experience" className="hover:text-accent transition-colors">Experience</Link>
           <Link to="/certifications" className="hover:text-accent transition-colors">Certifications</Link>
+          <Link to="/resume" className="hover:text-accent transition-colors">Resume</Link>
           <Link to="/blog" className="hover:text-accent transition-colors">Blog</Link>
           <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
         </div>

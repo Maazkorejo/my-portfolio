@@ -1,4 +1,5 @@
 import { Hero } from "@/components/portfolio/Hero";
+import { ResumeSection } from "@/components/portfolio/ResumeSection";
 import { BlogPreview } from "@/components/portfolio/BlogPreview";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -299,6 +300,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Verified Engineering Resume Section */}
+      <ResumeSection />
 
       {/* Blog Section */}
       <BlogPreview />

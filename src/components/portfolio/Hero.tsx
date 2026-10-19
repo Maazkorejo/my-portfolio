@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
-import { ArrowRight, ArrowUpRight, Github, Linkedin, Mail, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Github, Linkedin, Mail, MapPin, Sparkles, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { personal } from "@/data/portfolio";
 import { easeOut, lineReveal } from "@/lib/motion";
@@ -113,6 +113,14 @@ export function Hero() {
             <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.15 }}>
               <Button asChild size="lg" variant="outline" className="font-mono text-xs uppercase tracking-wider font-semibold">
                 <Link to="/skills">View Tech Stack</Link>
+              </Button>
+            </motion.div>
+
+            <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.15 }}>
+              <Button asChild size="lg" variant="outline" className="font-mono text-xs uppercase tracking-wider font-semibold border-accent/40 bg-accent/5 text-accent hover:bg-accent/15">
+                <Link to="/resume">
+                  <FileText className="mr-2 h-4 w-4" /> Resume
+                </Link>
               </Button>
             </motion.div>
 

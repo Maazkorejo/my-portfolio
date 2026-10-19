@@ -11,6 +11,7 @@ import SkillsPage from "./pages/SkillsPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ExperiencePage from "./pages/ExperiencePage";
 import CertificationsPage from "./pages/CertificationsPage";
+import ResumePage from "./pages/ResumePage";
 import ContactPage from "./pages/ContactPage";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
@@ -33,6 +34,7 @@ export default function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/experience" element={<ExperiencePage />} />
             <Route path="/certifications" element={<CertificationsPage />} />
+            <Route path="/resume" element={<ResumePage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

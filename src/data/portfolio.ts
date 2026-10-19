@@ -6,6 +6,9 @@ import kestrelPatchDiff from "@/assets/kestrel/kestrel_patch_diff.png";
 import kestrelThreatIntel from "@/assets/kestrel/kestrel_threat_intel.png";
 import kestrelSymbol from "@/assets/kestrel/kestrel-symbol.svg";
 
+// Official Resume Assets
+import resumePreview from "@/assets/resume/maaz-korejo-resume-page-1.png";
+
 export const personal = {
   name: "Muhammad Maaz Korejo",
   title: "AI Developer · Backend Engineer",
@@ -587,3 +590,155 @@ export const certifications = [
     ],
   },
 ];
+
+export const resumeData = {
+  pdfUrl: "/maaz-korejo-resume.pdf",
+  previewImage: resumePreview,
+  filename: "Muhammad_Maaz_Korejo_Resume.pdf",
+  lastUpdated: "October 2026",
+  headline: "AI Engineer & Backend Systems Developer",
+  summary:
+    "AI Engineer & Backend Systems Developer specializing in high-throughput AI platforms, deterministic AST vulnerability enrichment with Tree-Sitter, and offline evaluation architectures (llm-eval-kit). Proven experience shipping across Nebulark (ExploitGrid v0 Engine & 14-tool IDP benchmark), INFERENCE Lab Fellowship (Grade A graduate), and FlyRank.ai (292+ hrs, 12 Anthropic credentials).",
+  overviewHighlights: [
+    { label: "Target Roles", value: "AI Engineer · Backend Systems Developer · LLM Platform Engineer" },
+    { label: "Education", value: "BS Information Technology (6th Sem.), University of Sindh (Feb 2024 – Dec 2027)" },
+    { label: "Current Roles", value: "AI Engineer Intern at Nebulark · Research Fellow at INFERENCE Lab" },
+    { label: "Flagship Releases", value: "Kestrel AI (Nebius x NVIDIA Hackathon) · llm-eval-kit (PyPI) · CTX-Bridge (PyPI)" },
+    { label: "Core Security", value: "Tree-Sitter AST Parsing · SARIF 2.1.0 · CVSS v3.1 · EPSS v3 · CISA KEV" },
+    { label: "Verified Credentials", value: "12 Anthropic Verifications · Google AI Essentials · Linux Foundation (LFC102)" },
+  ],
+  technicalSkillsCategories: [
+    {
+      name: "AI & LLM Systems",
+      items: [
+        "Anthropic Claude API",
+        "NVIDIA Nemotron 3.5",
+        "LangGraph",
+        "DSPy",
+        "Self-RAG",
+        "pgvector",
+        "sentence-transformers",
+        "Mistral AI",
+        "Groq (LLaMA 3.3 70B)",
+        "Ollama",
+      ],
+    },
+    {
+      name: "Backend & Tooling",
+      items: [
+        "FastAPI",
+        "Redis",
+        "BullMQ",
+        "Docker",
+        "Supabase",
+        "Flask",
+        "Drizzle ORM",
+        "Electron",
+        "Monaco Editor",
+        "Typer CLI",
+        "Pytest",
+        "node:test",
+      ],
+    },
+    {
+      name: "Languages",
+      items: [
+        "Python 3.12",
+        "TypeScript",
+        "JavaScript (Node.js 20/24)",
+        "SQL (PostgreSQL)",
+        "Bash/PowerShell",
+      ],
+    },
+    {
+      name: "Security & DevSecOps",
+      items: [
+        "Tree-Sitter AST Parsing",
+        "SARIF 2.1.0",
+        "CVSS v3.1",
+        "EPSS v3",
+        "CISA KEV",
+        "npm lockfile v1/v2/v3",
+        "Docker Sandboxing",
+        "Tavily API",
+      ],
+    },
+    {
+      name: "Document Intelligence",
+      items: [
+        "Docling (TableFormer)",
+        "Mistral OCR-4",
+        "Ray Actor Framework",
+        "LiteParse (Rust PDFium)",
+        "Chandra OCR",
+        "DocLayout-YOLO",
+      ],
+    },
+  ],
+  experience: [
+    {
+      role: "AI Engineer & AI Developer Intern",
+      org: "Nebulark",
+      period: "Jul 2026 – Present",
+      bullets: [
+        "Built deterministic AST vulnerability enrichment pipeline (ExploitGrid v0 Engine) with Tree-Sitter across Go, Python, C, and JS, isolating exact vulnerable function boundaries and git patch diffs with 0% AI hallucination.",
+        "Shipped GitHub Marketplace Action (exploitgrid-dependency-scanner) in TypeScript; wrote 30 tests on the native node:test runner, 100% pass in 8.94s with zero external test dependencies.",
+        "Implemented lockfile analysis for npm schemas v1/v2/v3, normalizing ranges with semver.minVersion and processing dependencies in 250-package chunks through BullMQ Redis queue workers.",
+        "Designed 3-tier IDP routing for a 14-tool benchmark (LiteParse pre-check → Docling local CPU parser → Mistral OCR-4 cloud fallback), cutting cloud OCR cost by 80–90%.",
+        "Parallelized PDF page rendering and object detection with a Ray Actor worker pool: 3.3x speedup, 20 PDFs in 3.61s.",
+      ],
+    },
+    {
+      role: "Research / Implementation Engineer",
+      org: "INFERENCE Lab Fellowship",
+      period: "Jul 2026 – Present",
+      bullets: [
+        "Published llm-eval-kit on PyPI (github.com/Inference-LAB/llm-eval-kit): offline, deterministic LLM evaluation requiring zero external API keys.",
+        "Implemented cosine semantic similarity with local sentence-transformers (all-MiniLM-L6-v2), regex refusal classification, and JSON schema validation at 100% Pytest coverage.",
+      ],
+    },
+    {
+      role: "Back-End AI Engineering Intern",
+      org: "FlyRank.ai",
+      period: "Jul 2026 – Sep 2026",
+      bullets: [
+        "Logged 292+ hours building 5 backend microservices, Redis sliding-window rate limiters, and async task queues for the 'Your 10x Solution' content ingestion capstone.",
+        "Integrated Anthropic Claude API for structured text synthesis; wrote Pytest suites; earned 12 Anthropic-verified credentials. Credential ID: FR-D11-FA8DB-52256.",
+      ],
+    },
+  ],
+  projects: [
+    {
+      name: "Kestrel AI — AI-Native Cybersecurity IDE & DevSecOps Platform",
+      badge: "Nebius x NVIDIA Hackathon 2026",
+      bullets: [
+        "Built desktop security IDE: Electron frontend, embedded FastAPI sidecar (port 8000), Monaco Editor with gutter vulnerability glyphs and line-level diff decorations.",
+        "Detected OWASP Top 10 flaws (CWE-89, CWE-78, CWE-22, CWE-502, CWE-489) with deterministic AST analyzers; sent AST boundaries to NVIDIA Nemotron 3.5 to generate unified git diff patches.",
+        "Grounded findings with Tavily API CVE/EPSS lookups; verified exploit attack trees in isolated Docker sandboxes; headless CLI exports OASIS SARIF 2.1.0 (39/39 tests passing).",
+      ],
+    },
+    {
+      name: "llm-eval-kit — Deterministic Offline LLM Evaluation Library",
+      badge: "INFERENCE Lab | PyPI",
+      bullets: [
+        "Computes cosine similarity, refusal rate, factual grounding, and JSON adherence locally, with no network latency or API billing.",
+        "Modular test framework at 100% Pytest coverage, enabling CI gating for local and hosted model evaluation pipelines.",
+      ],
+    },
+    {
+      name: "Alfred — Personal AI Operating Assistant",
+      badge: "Full-stack, personal",
+      bullets: [
+        "Built agent with 14 custom tools, episodic long-term memory on PostgreSQL (pgvector), and dual-wake trigger: local Piper TTS plus real-time audio FFT clap detection.",
+        "Dockerized microservices; backend on Railway, client on Vercel Edge.",
+      ],
+    },
+    {
+      name: "CTX-Bridge — AI Context Handoff CLI",
+      badge: "PyPI: ctx-bridge",
+      bullets: [
+        "Built Python CLI (Typer, GitPython) that serializes branch diffs, commit history, task state, and blockers into markdown handoff files for multi-agent workflows.",
+      ],
+    },
+  ],
+};

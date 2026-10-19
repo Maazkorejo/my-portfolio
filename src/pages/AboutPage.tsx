@@ -1,6 +1,6 @@
 import { About } from "@/components/portfolio/About";
 import { Link } from "react-router-dom";
-import { FolderGit2, Sparkles, Mail, ArrowRight, ArrowUpRight } from "lucide-react";
+import { FolderGit2, Sparkles, Mail, ArrowRight, ArrowUpRight, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function AboutPage() {
@@ -41,6 +41,11 @@ export default function AboutPage() {
             <Button asChild variant="outline" className="font-mono text-xs uppercase tracking-wider font-semibold">
               <Link to="/skills">
                 <Sparkles className="mr-2 h-4 w-4" /> Explore Stack
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="font-mono text-xs uppercase tracking-wider font-semibold">
+              <Link to="/resume">
+                <FileText className="mr-2 h-4 w-4" /> View Resume
               </Link>
             </Button>
             <Button asChild variant="ghost" className="font-mono text-xs uppercase tracking-wider font-semibold">
