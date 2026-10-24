@@ -16,7 +16,7 @@ export function About() {
           <p>
             I am a 3rd-year BS Information Technology student at the University of Sindh, Jamshoro,
             focusing on the practical engineering challenges of deploying AI to production.
-            Currently an <strong className="text-foreground">AI Developer Intern at Nebulark</strong> (building IDP SaaS)
+            Currently a <strong className="text-foreground">Full Stack & AI Developer Intern at Nebulark</strong> (completed 3-month term with extension through Jan 2027)
             and a graduate <strong className="text-foreground">Research Implementation Fellow at INFERENCE Lab</strong> (Cohort 01, Grade A).
           </p>
           <p>

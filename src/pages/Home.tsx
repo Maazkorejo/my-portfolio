@@ -53,7 +53,7 @@ const coreInitiatives = [
     category: "Industry & Research",
     statusTag: "Active Roles",
     title: "Work Experience & Fellowships",
-    desc: "Backend AI Engineering Internship at FlyRank.ai, AI Developer Internship at Nebulark (IDP SaaS), and Research Implementation Fellowship at INFERENCE Lab.",
+    desc: "Backend AI Engineering Internship at FlyRank.ai, Full Stack & AI Developer Internship at Nebulark (completed term & extended to Jan 2027), and Research Implementation Fellowship at INFERENCE Lab.",
     href: "/experience",
     icon: Briefcase,
     highlights: [
@@ -65,7 +65,7 @@ const coreInitiatives = [
   },
   {
     category: "Accredited Authority",
-    statusTag: "33 Scanned Originals",
+    statusTag: "34 Scanned Originals",
     title: "Verified Certifications",
     desc: "12 Anthropic credentials, Google AI Essentials 5-course specialization, Linux Foundation, IBM, and UniAthena Python certifications.",
     href: "/certifications",
@@ -293,7 +293,7 @@ export default function Home() {
                   <Award className="h-3.5 w-3.5" /> Verified Certs
                 </p>
                 <p className="text-muted-foreground text-[11px] leading-relaxed">
-                  33 original scanned credentials (12 Anthropic + Google + Linux + INFERENCE Lab).
+                  34 original scanned credentials (12 Anthropic + Google + Linux + INFERENCE Lab + Nebulark).
                 </p>
               </div>
             </div>

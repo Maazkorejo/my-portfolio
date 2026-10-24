@@ -92,7 +92,7 @@ export function Hero() {
           >
             Specializing in LLM-integrated platforms, cybersecurity tooling, Intelligent Document Processing (IDP) SaaS,
             reproducible offline evaluation architectures, and agentic workflows.
-            Creator of <span className="text-foreground font-semibold">Kestrel AI</span> and <span className="text-foreground font-mono text-xs">CTX-Bridge</span>. Former Backend AI Intern at FlyRank.ai, Implementation Fellow at INFERENCE Lab (<span className="text-foreground font-mono text-xs">llm-eval-kit</span>, Grade A graduate), and AI Developer Intern at Nebulark.
+            Creator of <span className="text-foreground font-semibold">Kestrel AI</span> and <span className="text-foreground font-mono text-xs">CTX-Bridge</span>. Former Backend AI Intern at FlyRank.ai, Implementation Fellow at INFERENCE Lab (<span className="text-foreground font-mono text-xs">llm-eval-kit</span>, Grade A graduate), and Full Stack & AI Developer Intern at Nebulark (extended through Jan 2027).
           </motion.p>
 
           {/* Action CTAs */}
@@ -166,7 +166,7 @@ export function Hero() {
               </dd>
             </div>
             <div className="bg-background p-5 hover:bg-card/50 transition-colors">
-              <dt className="font-mono text-3xl sm:text-4xl font-bold tracking-tight text-foreground">33+</dt>
+              <dt className="font-mono text-3xl sm:text-4xl font-bold tracking-tight text-foreground">34+</dt>
               <dd className="mt-1.5 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
                 VERIFIED CERTIFICATES
               </dd>

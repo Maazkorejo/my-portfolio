@@ -35,7 +35,7 @@ export function Certifications() {
       id="certifications"
       eyebrow="05 / Accredited Credentials"
       title="Verified Certifications & Honors."
-      description="33 original scanned credentials across AI agent protocols, LLM engineering, open-source governance, cybersecurity, and cloud platforms."
+      description="34 original scanned credentials across AI agent protocols, LLM engineering, open-source governance, cybersecurity, and cloud platforms."
     >
       {/* Featured Top 3 Section (Always Visible) */}
       <div className="mb-10">
@@ -145,7 +145,7 @@ export function Certifications() {
             ) : (
               <>
                 <ChevronDown className="h-4 w-4 text-accent transition-transform group-hover:translate-y-0.5" />
-                <span>View All 33 Certifications &amp; Credential Groups</span>
+                <span>View All 34 Certifications &amp; Credential Groups</span>
               </>
             )}
           </Button>

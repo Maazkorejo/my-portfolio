@@ -17,7 +17,7 @@ export const personal = {
   phone: "+92 345 661 8618",
   linkedin: "https://linkedin.com/in/muhammad-maaz-korejo",
   github: "https://github.com/Maazkorejo",
-  bio: "AI Developer & Backend Engineer specializing in LLM-integrated systems, cybersecurity tooling, Intelligent Document Processing (IDP), and offline evaluation architectures. Creator of Kestrel AI (AI-native cybersecurity IDE) and CTX-Bridge (open-source context CLI on PyPI). Former Backend AI Engineering Intern at FlyRank.ai, Implementation Fellow at INFERENCE Lab (llm-eval-kit, Grade A graduate), AI Developer Intern at Nebulark, holding 12 Anthropic-verified credentials and Google AI Essentials specialization.",
+  bio: "AI Developer & Backend Engineer specializing in LLM-integrated systems, cybersecurity tooling, Intelligent Document Processing (IDP), and offline evaluation architectures. Creator of Kestrel AI (AI-native cybersecurity IDE) and CTX-Bridge (open-source context CLI on PyPI). Former Backend AI Engineering Intern at FlyRank.ai, Implementation Fellow at INFERENCE Lab (llm-eval-kit, Grade A graduate), Full Stack & AI Developer Intern at Nebulark (completed term with extension through Jan 2027), holding 12 Anthropic-verified credentials and Google AI Essentials specialization.",
 };
 
 export const skillGroups = [
@@ -351,6 +351,8 @@ import flyrankEvalP2 from "@/assets/certs_real/flyrank-evaluation-report-page-2.
 import flyrankLogo from "@/assets/flyrank-logo.svg";
 import inferenceLabLogo from "@/assets/inference-lab-logo.png";
 import inferenceLabCert from "@/assets/certs_real/inference-lab-fellowship.jpg";
+import nebularkLogo from "@/assets/nebulark-icon.png";
+import nebularkCompletionCert from "@/assets/certs_real/nebulark-internship-completion.jpg";
 import pitpLogo from "@/assets/pitp-logo.webp";
 
 import forageDatacom from "@/assets/certs_real/forage-datacom-cybersec.jpg";
@@ -395,6 +397,7 @@ export const certificateImages = [
   // Industry Engineering & Program Honors
   { title: "Backend AI Engineering Internship", issuer: "FlyRank.ai", src: flyrankBackendAi, image: flyrankBackendAi },
   { title: "Engineering Fellowship Program (Grade A)", issuer: "INFERENCE Lab · llm-eval-kit", src: inferenceLabCert, image: inferenceLabCert },
+  { title: "Internship Completion Certificate — Full Stack Developer", issuer: "Nebulark", src: nebularkCompletionCert, image: nebularkCompletionCert },
 
   // Cybersecurity & Professional Simulations
   { title: "Cyber Security Operations Job Simulation", issuer: "Datacom · Forage", src: forageDatacom, image: forageDatacom },
@@ -455,15 +458,26 @@ export const experience = [
     ],
   },
   {
-    role: "AI Developer Intern",
-    org: "Nebulark (IDP SaaS)",
-    period: "Jul 2026 – Present",
-    badge: "Current Role",
+    role: "Full Stack & AI Developer Intern",
+    org: "Nebulark (IDP SaaS · Islamabad, Remote)",
+    logo: nebularkLogo,
+    period: "Jul 2026 – Jan 2027",
+    badge: "Completed Term · Extended to Jan 2027",
     points: [
+      "Completed official 3-month internship term (20 Jul 2026 – 20 Oct 2026) contributing across full-stack and IDP engineering; awarded merit-based contract extension through 31 January 2027.",
       "Conducted a comprehensive 14-tool benchmark across OCR, layout parsing, and table extraction engines (Docling, Mistral-OCR-4, Chandra-OCR, DocLayout-YOLO, Reducto, LandingAI DPT-3, PaddleOCR, LiteParse).",
       "Architected a 3-tier cost-optimized hybrid extraction pipeline (0.5s LiteParse heuristic pre-check -> local Docling on CPU -> Mistral-OCR-4 / Chandra-OCR cloud fallback), slashing cloud API costs by 80–90%.",
       "Implemented Ray parallel actor processing achieving 3.3x speedup for batch PDF document extraction; fine-tuned DocLayout-YOLO (9 document layout classes) using Label-Studio annotations.",
-      "Conducted OpenMAIC provider-registry architectural review and enforced PostgreSQL Row-Level Security (RLS) policies for multi-tenant isolation.",
+      "Contributed to full-stack web application development, testing, debugging, OpenMAIC provider-registry review, and enforced PostgreSQL Row-Level Security (RLS) policies for multi-tenant isolation.",
+    ],
+    documents: [
+      {
+        title: "Certificate of Completion — Full Stack Developer Internship",
+        badge: "Completion Certificate",
+        issuer: "Nebulark · Letter# 012-623-10 · Zia Ullah, HR Manager",
+        images: [nebularkCompletionCert],
+        verifyUrl: "https://nebulark.net",
+      },
     ],
   },
   {
@@ -566,6 +580,7 @@ export const certifications = [
     group: "Programs, Awards & Fellowships",
     issuer: "Research & Industry Honors",
     items: [
+      { name: "Full Stack Developer Internship — Certificate of Completion", issuer: "Nebulark", date: "Oct 2026" },
       { name: "Backend AI Engineering Internship — Certificate of Completion", issuer: "FlyRank.ai", date: "Sep 2026" },
       { name: "INFERENCE Lab Fellowship — Certificate of Achievement (Grade A)", issuer: "INFERENCE Lab", date: "Sep 2026" },
       { name: "Top Participant — HEC/NAVTTC ACT AI SkillBridge", issuer: "HEC / NAVTTC", date: "2026" },
@@ -602,7 +617,7 @@ export const resumeData = {
   overviewHighlights: [
     { label: "Target Roles", value: "AI Engineer · Backend Systems Developer · LLM Platform Engineer" },
     { label: "Education", value: "BS Information Technology (6th Sem.), University of Sindh (Feb 2024 – Dec 2027)" },
-    { label: "Current Roles", value: "AI Engineer Intern at Nebulark · Research Fellow at INFERENCE Lab" },
+    { label: "Current Roles", value: "Full Stack & AI Intern at Nebulark (Extended to Jan 2027) · Research Fellow at INFERENCE Lab" },
     { label: "Flagship Releases", value: "Kestrel AI (Nebius x NVIDIA Hackathon) · llm-eval-kit (PyPI) · CTX-Bridge (PyPI)" },
     { label: "Core Security", value: "Tree-Sitter AST Parsing · SARIF 2.1.0 · CVSS v3.1 · EPSS v3 · CISA KEV" },
     { label: "Verified Credentials", value: "12 Anthropic Verifications · Google AI Essentials · Linux Foundation (LFC102)" },
@@ -677,10 +692,11 @@ export const resumeData = {
   ],
   experience: [
     {
-      role: "AI Engineer & AI Developer Intern",
+      role: "Full Stack & AI Developer Intern",
       org: "Nebulark",
-      period: "Jul 2026 – Present",
+      period: "Jul 2026 – Jan 2027 (Extended)",
       bullets: [
+        "Completed official 3-month term (20 Jul – 20 Oct 2026); awarded contract extension to Jan 2027 based on core IDP benchmark and full-stack engineering delivery.",
         "Built deterministic AST vulnerability enrichment pipeline (ExploitGrid v0 Engine) with Tree-Sitter across Go, Python, C, and JS, isolating exact vulnerable function boundaries and git patch diffs with 0% AI hallucination.",
         "Shipped GitHub Marketplace Action (exploitgrid-dependency-scanner) in TypeScript; wrote 30 tests on the native node:test runner, 100% pass in 8.94s with zero external test dependencies.",
         "Implemented lockfile analysis for npm schemas v1/v2/v3, normalizing ranges with semver.minVersion and processing dependencies in 250-package chunks through BullMQ Redis queue workers.",
